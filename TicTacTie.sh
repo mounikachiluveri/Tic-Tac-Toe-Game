@@ -16,7 +16,6 @@ function resetBoard(){
                   fi
         done
 }
-resetBoard
 function toss(){
 
         checkToss=$((RANDOM%2))
@@ -30,5 +29,25 @@ function toss(){
                playerChance=0
         fi
 }
+function assignSymbol(){
+        assign=$((RANDOM%2))
+        if (($assign==1))
+        then
+                   playerSymbol='X'
+                   computerSymbol='O'
+        else
+                  playerSymbol='O'
+                  computerSymbol='X'
+        fi
+
+        echo -e "\nPlayer 1 = $playerSymbol"
+        echo -e "Computer = $computerSymbol"
+
+}
+assignSymbol
 toss
+resetBoard
+
+
+
 
