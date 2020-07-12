@@ -6,10 +6,10 @@ column=3
 numberOfShell=$(($row*$column))
 function resetBoard(){
         board=( 1 2 3 4 5 6 7 8 9 )
-        for (( i=0,j=0;j<$row;i=$(($i+3)),j++ ))
+        for (( columnValue=0,rowNumber=0;rowNumber<$row;columnValue=$(($columnValue+3)),rowNumber++ ))
         do
-        echo -e "\t${board[i]} | ${board[i+1]} | ${board[i+2]}"
-        if (($j!=$(($row-1))))
+        echo -e "\t${board[columnValue]} | ${board[columnValue+1]} | ${board[columnValue+2]}"
+        if (($rowNumber!=$(($row-1))))
         then
         echo -e "\t---------"
         fi
